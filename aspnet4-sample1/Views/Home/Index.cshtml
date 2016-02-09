@@ -17,7 +17,7 @@
 
             @foreach(var c in ClaimsPrincipal.Current.Claims)
             {
-                <li><span>@c.Type</span>: <span> @c.Value.ToString().Substring(0,100)</span></li>
+                <li><span>@c.Type</span>: <span> @c.Value</span></li>
             }
         </ul>
     }
