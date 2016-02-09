@@ -12,6 +12,14 @@
     {
         <p>Welcome, @ViewBag.Name!</p>
         <p><a href="/Home/Logout" class="btn btn-primary btn-lg">Logout</a></p>
+
+        <ul>
+
+            @foreach(var c in ClaimsPrincipal.Current.Claims)
+            {
+                <li><span>@c.Type</span>: <span> @c.Value</span></li>
+            }
+        </ul>
     }
     else {
         <p><a href="#" class="btn btn-primary btn-lg" onclick="window.signin();">Login with Auth0</a></p>
